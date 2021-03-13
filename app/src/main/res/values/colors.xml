@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //action bar color
+    <color name="colorPrimary">#FFFFFF</color>
+
+    //맨 위 bar color
+    <color name="colorPrimaryDark">#000000</color>
+
+    //bottom navigation color
+    <color name="colorAccent">#E91E63</color>
+
+    //배경 color
+    <color name="windowBackground">#FFFFFF</color>
+    <!-- 기본 -->
+
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="black">#000000</color>
+
+    <color name="whiteForBackground">#FFFFFF</color>
+
+    <color name="blackForText">#B1B1B1</color>
+
+    <color name="redForText">#d9534f</color>
+
+</resources>

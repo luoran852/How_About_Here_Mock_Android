@@ -225,3 +225,9 @@
 #gradlew
 #gradlew.bat
 #settings.gradle
+libs/
+src/androidTest/
+src/main/java/com/softsquared/template/kotlin/src/main/more/
+src/main/java/com/softsquared/template/kotlin/src/main/myLocation/
+src/main/java/com/softsquared/template/kotlin/src/main/search/
+src/test/

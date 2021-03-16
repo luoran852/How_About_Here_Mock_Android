@@ -1,20 +1,44 @@
 package com.softsquared.template.kotlin.src.main.myPage
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
 import com.softsquared.template.kotlin.databinding.FragmentMyPageBinding
+import com.softsquared.template.kotlin.src.main.MainActivity
+import com.softsquared.template.kotlin.src.main.home.models.SignUpResponse
+import com.softsquared.template.kotlin.src.main.home.models.UserResponse
 
 class MyPageFragment :
-    BaseFragment<FragmentMyPageBinding>(FragmentMyPageBinding::bind, R.layout.fragment_my_page) {
-    private var mCount = 0
+    BaseFragment<FragmentMyPageBinding>(FragmentMyPageBinding::bind,
+        R.layout.fragment_my_page), MyPageFragmentView {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonChangeCounterText.setOnClickListener {
-            binding.textViewCounter.text =
-                resources.getString(R.string.my_page_tv_counter, ++mCount)
+        binding.myPageLoginLinearLayout.setOnClickListener {
+            val intent = Intent(getActivity(), LoginActivity::class.java)
+            startActivity(intent)
         }
+
+    }
+
+    override fun onGetUserSuccess(response: UserResponse) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onGetUserFailure(message: String) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onPostSignUpSuccess(response: SignUpResponse) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onPostSignUpFailure(message: String) {
+        TODO("Not yet implemented")
     }
 }

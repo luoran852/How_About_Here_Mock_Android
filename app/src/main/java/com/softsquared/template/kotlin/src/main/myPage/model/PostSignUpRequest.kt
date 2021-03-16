@@ -3,9 +3,8 @@ package com.softsquared.template.kotlin.src.main.myPage.model
 import com.google.gson.annotations.SerializedName
 
 data class PostSignUpRequest(
-    @SerializedName("email") val email: String,
-    @SerializedName("password") val password: String,
-    @SerializedName("confirmPassword") val confirmPassword: String,
+    @SerializedName("id") val id: String,
+    @SerializedName("pwd") val pwd: String,
     @SerializedName("nickname") val nickname: String,
-    @SerializedName("phoneNumber") val phoneNumber: String
+    @SerializedName("phone") val phone: String
 )

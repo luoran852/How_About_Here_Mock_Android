@@ -10,8 +10,8 @@ import com.softsquared.template.kotlin.src.main.home.models.PostSignUpRequest
 import com.softsquared.template.kotlin.src.main.home.models.SignUpResponse
 import com.softsquared.template.kotlin.src.main.home.models.UserResponse
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home),
-    HomeFragmentView {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind,
+        R.layout.fragment_home), HomeFragmentView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,8 +24,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         binding.homeBtnTryPostHttpMethod.setOnClickListener {
             val email = binding.homeEtId.text.toString()
             val password = binding.homeEtPw.text.toString()
-            val postRequest = PostSignUpRequest(email = email, password = password,
-                confirmPassword = password, nickname = "test", phoneNumber = "010-0000-0000")
+            val postRequest = PostSignUpRequest(id = email, pwd = password,
+                nickname = "test", phone = "010-0000-0000")
             showLoadingDialog(context!!)
             HomeService(this).tryPostSignUp(postRequest)
         }
@@ -37,7 +37,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
             Log.d("HomeFragment", User.toString())
         }
         binding.homeButtonTryGetJwt.text = response.message
-        showCustomToast("Get JWT 성공")
+//        showCustomToast("Get JWT 성공")
+        showCustomToast(response.message)
     }
 
     override fun onGetUserFailure(message: String) {

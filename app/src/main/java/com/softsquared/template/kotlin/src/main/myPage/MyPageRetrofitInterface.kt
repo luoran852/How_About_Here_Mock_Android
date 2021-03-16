@@ -12,6 +12,6 @@ interface MyPageRetrofitInterface {
     @GET("/users")
     fun getUsers() : Call<UserResponse>
 
-    @POST("/users")
+    @POST("/sign-up")
     fun postSignUp(@Body params: PostSignUpRequest): Call<SignUpResponse>
 }

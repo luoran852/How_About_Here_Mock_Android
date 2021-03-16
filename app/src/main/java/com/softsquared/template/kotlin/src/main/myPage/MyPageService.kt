@@ -12,8 +12,8 @@ import retrofit2.Response
 class MyPageService(val view: MyPageFragmentView) {
 
     fun tryGetUsers(){
-        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-        homeRetrofitInterface.getUsers().enqueue(object : Callback<UserResponse> {
+        val MyPageRetrofitInterface = ApplicationClass.sRetrofit.create(MyPageRetrofitInterface::class.java)
+        MyPageRetrofitInterface.getUsers().enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 view.onGetUserSuccess(response.body() as UserResponse)
             }
@@ -25,8 +25,8 @@ class MyPageService(val view: MyPageFragmentView) {
     }
 
     fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
-        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-        homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse> {
+        val MyPageRetrofitInterface = ApplicationClass.sRetrofit.create(MyPageRetrofitInterface::class.java)
+        MyPageRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse> {
             override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
                 view.onPostSignUpSuccess(response.body() as SignUpResponse)
             }

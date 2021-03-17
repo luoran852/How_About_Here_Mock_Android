@@ -1,19 +1,18 @@
-package com.softsquared.template.kotlin.src.main.myPage
+package com.softsquared.template.kotlin.src.main.required
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import com.softsquared.template.kotlin.R
-import com.softsquared.template.kotlin.config.ApplicationClass.Companion.sRetrofit
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityRequiredInfoBinding
-import com.softsquared.template.kotlin.src.main.home.models.PostSignUpRequest
-import com.softsquared.template.kotlin.src.main.home.models.SignUpResponse
-import com.softsquared.template.kotlin.src.main.home.models.UserResponse
-import retrofit2.create
+import com.softsquared.template.kotlin.src.main.required.model.PostSignUpRequest
+import com.softsquared.template.kotlin.src.main.required.model.SignUpResponse
 
 class RequiredInfoActivity : BaseActivity<ActivityRequiredInfoBinding>
     (ActivityRequiredInfoBinding::inflate), RequiredInfoActivityView {
+
+    val TAG : String = "태그"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +21,9 @@ class RequiredInfoActivity : BaseActivity<ActivityRequiredInfoBinding>
             val id = binding.editEmail.text.toString()
             val password = binding.editPassword.text.toString()
             val nickname = binding.editNickname.text.toString()
-            val phone = findViewById<TextView>(R.id.edit_text_phone).text.toString()
+//            val phone = findViewById<TextView>(R.id.edit_text_phone).text.toString()
             val postRequest = PostSignUpRequest(id = id, pwd = password,
-                nickname = nickname, phone = phone)
+                nickname = nickname)
             showLoadingDialog(this)
             RequiredInfoService(this).tryPostSignUp(postRequest)
         }
@@ -36,10 +35,9 @@ class RequiredInfoActivity : BaseActivity<ActivityRequiredInfoBinding>
         dismissLoadingDialog()
 //        binding.editEmail.text = response.message
 
-        when(response.code){
-            1000 -> {
-                response.message?.let { showCustomToast(it) }
-            }
+        if (response.code == 1000) {
+            Log.e(TAG, "onPostSignUpSuccess: 회원가입 성공")
+            response.message?.let { showCustomToast(it) }
         }
 
     }
@@ -48,7 +46,8 @@ class RequiredInfoActivity : BaseActivity<ActivityRequiredInfoBinding>
     override fun onPostSignUpFailure(message: String, response: SignUpResponse) {
         dismissLoadingDialog()
 
-        when(response.code){
+        when(response.code) {
+
             //입력사항을 모두 기입해주세요.
             2000 -> {
                 showCustomToast("$message")

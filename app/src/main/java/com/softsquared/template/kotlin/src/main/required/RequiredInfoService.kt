@@ -1,10 +1,8 @@
-package com.softsquared.template.kotlin.src.main.myPage
+package com.softsquared.template.kotlin.src.main.required
 
 import com.softsquared.template.kotlin.config.ApplicationClass
-import com.softsquared.template.kotlin.src.main.home.HomeRetrofitInterface
-import com.softsquared.template.kotlin.src.main.home.models.PostSignUpRequest
-import com.softsquared.template.kotlin.src.main.home.models.SignUpResponse
-import com.softsquared.template.kotlin.src.main.home.models.UserResponse
+import com.softsquared.template.kotlin.src.main.required.model.PostSignUpRequest
+import com.softsquared.template.kotlin.src.main.required.model.SignUpResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,22 +23,10 @@ class RequiredInfoService(val view: RequiredInfoActivityView) {
 //    }
 
     fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
-        val myPageRetrofitInterface = ApplicationClass.sRetrofit.create(MyPageRetrofitInterface::class.java)
-        myPageRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object :
+        val requiredRetrofitInterface = ApplicationClass.sRetrofit.create(RequiredRetrofitInterface::class.java)
+        requiredRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object :
             Callback<SignUpResponse> {
             override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
-
-                when(response.code()) {
-
-                    100 -> {
-                        response.body()?.let {
-
-//                            val id = it.
-                        }
-                    }
-                }
-
-
                 view.onPostSignUpSuccess(response.body() as SignUpResponse)
             }
 

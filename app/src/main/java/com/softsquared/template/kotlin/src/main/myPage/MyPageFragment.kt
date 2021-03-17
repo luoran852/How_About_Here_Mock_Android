@@ -2,15 +2,12 @@ package com.softsquared.template.kotlin.src.main.myPage
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
 import com.softsquared.template.kotlin.databinding.FragmentMyPageBinding
-import com.softsquared.template.kotlin.src.main.MainActivity
-import com.softsquared.template.kotlin.src.main.home.models.SignUpResponse
-import com.softsquared.template.kotlin.src.main.home.models.UserResponse
+import com.softsquared.template.kotlin.src.main.login.LoginActivity
+import com.softsquared.template.kotlin.src.main.myPage.model.UserResponse
 
 class MyPageFragment :
     BaseFragment<FragmentMyPageBinding>(FragmentMyPageBinding::bind,
@@ -34,11 +31,11 @@ class MyPageFragment :
         TODO("Not yet implemented")
     }
 
-    override fun onPostSignUpSuccess(response: SignUpResponse) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onPostSignUpFailure(message: String) {
-        TODO("Not yet implemented")
-    }
+//    override fun onPostSignUpSuccess(response: SignUpResponse) {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override fun onPostSignUpFailure(message: String) {
+//        TODO("Not yet implemented")
+//    }
 }

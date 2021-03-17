@@ -1,8 +1,6 @@
 package com.softsquared.template.kotlin.src.main.home
 
 import com.softsquared.template.kotlin.config.ApplicationClass
-import com.softsquared.template.kotlin.src.main.home.models.PostSignUpRequest
-import com.softsquared.template.kotlin.src.main.home.models.SignUpResponse
 import com.softsquared.template.kotlin.src.main.home.models.UserResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,17 +21,17 @@ class HomeService(val view: HomeFragmentView) {
         })
     }
 
-    fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
-        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-        homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse>{
-            override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
-                view.onPostSignUpSuccess(response.body() as SignUpResponse)
-            }
-
-            override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                view.onPostSignUpFailure(t.message ?: "통신 오류")
-            }
-        })
-    }
+//    fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
+//        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
+//        homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse>{
+//            override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
+//                view.onPostSignUpSuccess(response.body() as SignUpResponse)
+//            }
+//
+//            override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
+//                view.onPostSignUpFailure(t.message ?: "통신 오류")
+//            }
+//        })
+//    }
 
 }

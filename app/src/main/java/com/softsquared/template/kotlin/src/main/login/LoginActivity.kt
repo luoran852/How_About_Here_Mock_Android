@@ -1,13 +1,13 @@
-package com.softsquared.template.kotlin.src.main.myPage
+package com.softsquared.template.kotlin.src.main.login
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.user.UserApiClient
-import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityLoginBinding
+import com.softsquared.template.kotlin.src.main.Agreement.AgreementActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
 

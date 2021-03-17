@@ -1,7 +1,6 @@
-package com.softsquared.template.kotlin.src.main.myPage
+package com.softsquared.template.kotlin.src.main.required
 
-import com.softsquared.template.kotlin.src.main.home.models.SignUpResponse
-import com.softsquared.template.kotlin.src.main.home.models.UserResponse
+import com.softsquared.template.kotlin.src.main.required.model.SignUpResponse
 
 interface RequiredInfoActivityView {
 

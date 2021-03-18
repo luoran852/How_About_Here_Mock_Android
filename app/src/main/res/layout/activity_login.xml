@@ -12,17 +12,19 @@
         android:layout_height="60dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/login_out_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_login_out_btn" />
+            android:src="@drawable/btn_out"
+            android:layout_margin="10dp"/>
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/how_about_here_logo_login_top" />
+            android:src="@drawable/logo_how_about_here_login_top" />
 
 
     </FrameLayout>
@@ -33,28 +35,28 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="120dp"
-        android:src="@drawable/kako_login_btn" />
+        android:src="@drawable/btn_kako_login" />
 
     <ImageView
         android:id="@+id/facebook_login_btn"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/facebook_login_btn" />
+        android:src="@drawable/btn_facebook_login" />
 
     <ImageView
         android:id="@+id/naver_login_btn"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/naver_login_btn" />
+        android:src="@drawable/btn_naver_login" />
 
     <ImageView
         android:id="@+id/email_login_btn"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/email_login_btn" />
+        android:src="@drawable/btn_email_login" />
 
     <Space
         android:layout_width="match_parent"

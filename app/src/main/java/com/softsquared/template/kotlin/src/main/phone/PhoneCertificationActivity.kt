@@ -14,7 +14,12 @@ class PhoneCertificationActivity : BaseActivity<ActivityPhoneCertificationBindin
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.sendAuthNum.setOnClickListener {
+        // 나가기 버튼
+        binding.phoneBackBtn.setOnClickListener {
+            finish()
+        }
+
+        binding.phoneSendNumBtn.setOnClickListener {
             val intent = Intent(this, RequiredInfoActivity::class.java)
             startActivity(intent)
 

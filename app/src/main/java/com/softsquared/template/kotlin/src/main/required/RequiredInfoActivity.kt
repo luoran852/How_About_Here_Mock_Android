@@ -17,6 +17,11 @@ class RequiredInfoActivity : BaseActivity<ActivityRequiredInfoBinding>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // 나가기 버튼
+        binding.requiredBackBtn.setOnClickListener {
+            finish()
+        }
+
         binding.requiredInfoBtn.setOnClickListener {
             val id = binding.editEmail.text.toString()
             val password = binding.editPassword.text.toString()
@@ -38,6 +43,7 @@ class RequiredInfoActivity : BaseActivity<ActivityRequiredInfoBinding>
         if (response.code == 1000) {
             Log.e(TAG, "onPostSignUpSuccess: 회원가입 성공")
             response.message?.let { showCustomToast(it) }
+            finish()
         }
 
     }

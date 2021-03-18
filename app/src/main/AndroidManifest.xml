@@ -59,6 +59,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".src.main.loginEmail.LoginEmailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
 
         <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
         <intent-filter>
@@ -66,7 +70,7 @@
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
 
-            <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth“ -->
+            <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
             <data android:host="oauth"
                 android:scheme="kakaoadb83b13db3029abbb49ecf6329f3933" />
         </intent-filter>

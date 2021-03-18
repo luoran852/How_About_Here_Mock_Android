@@ -13,6 +13,7 @@
 
     <!-- Main -->
 
+    <string name="login_email_pwd_underlined_text"><u>비밀번호 재설정</u></string>
 
     <string name="main_btm_nav_home_title">홈</string>
 

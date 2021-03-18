@@ -10,6 +10,12 @@
     //bottom navigation color
     <color name="colorAccent">#E91E63</color>
 
+    //button color
+    <color name="colorBtn">#1495a3</color>
+
+    //grey text color
+    <color name="colorGreyText">#9C9C9C</color>
+
     //배경 color
     <color name="windowBackground">#FFFFFF</color>
     <!-- 기본 -->

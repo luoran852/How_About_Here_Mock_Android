@@ -3,15 +3,23 @@ package com.softsquared.template.kotlin.src.main.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.user.UserApiClient
+import com.softsquared.template.kotlin.config.ApplicationClass
+import com.softsquared.template.kotlin.config.ApplicationClass.Companion.X_ACCESS_TOKEN
+import com.softsquared.template.kotlin.config.ApplicationClass.Companion.sSharedPreferences
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityLoginBinding
 import com.softsquared.template.kotlin.src.main.Agreement.AgreementActivity
+import com.softsquared.template.kotlin.src.main.login.model.LoginResponse
+import com.softsquared.template.kotlin.src.main.login.model.PostLoginRequest
 import com.softsquared.template.kotlin.src.main.loginEmail.LoginEmailActivity
+import com.softsquared.template.kotlin.src.main.myPage.MyPageFragment
 
-class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
+class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate),
+    LoginActivityView {
 
     private var mCount = 0
     val TAG : String = "태그"
@@ -66,6 +74,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                 else if (token != null) {
                     Log.i(TAG, "로그인 성공 ${token.accessToken}")
 
+                    val TOKEN = token.accessToken
+
+                    val postRequest = PostLoginRequest(TOKEN = TOKEN)
+                    showLoadingDialog(this)
+                    LoginService(this).tryPostLogin(postRequest)
                 }
             }
 
@@ -99,6 +112,55 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         binding.signUpEmail.setOnClickListener {
             val intent = Intent(this, AgreementActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    //post 성공시
+    override fun onPostLoginSuccess(response: LoginResponse) {
+        dismissLoadingDialog()
+
+        //jwt값 sharedpreference에 저장
+        Log.e(TAG, "${response.result[0].jwt}")
+
+        // SharedPreferences 의 데이터를 저장/편집을 위해 Editor 변수를 선언
+        val editor = sSharedPreferences.edit()
+
+        // key값에 value값을 저장
+        editor.putString(X_ACCESS_TOKEN, response.result[0].jwt)
+
+        // 메모리에 있는 데이터를 저장장치에 저장함. commit
+        editor.commit()
+
+//        X_ACCESS_TOKEN = response.result[0].jwt
+
+        if (response.code == 1000) {
+            Log.e(ApplicationClass.TAG, "login activity: X_ACCESS_TOKEN? " +
+                    "${sSharedPreferences.getString(X_ACCESS_TOKEN, "")}")
+            Log.e(TAG, "onPostLoginSuccess: 로그인 성공")
+            response.message?.let { showCustomToast(it) }
+
+            Log.e(TAG, "X_ACCESS_TOKEN 저장됐는지 확인: ${sSharedPreferences.getString(X_ACCESS_TOKEN, "")}")
+            finish()
+//            val intent = Intent(this, MyPageFragment::class.java)
+//            startActivity(intent)
+        }
+    }
+
+    override fun onPostLoginFailure(message: String, response: LoginResponse) {
+        dismissLoadingDialog()
+        Log.e(TAG, "onPostLoginFailure: 로그인 실패")
+        when(response.code) {
+
+            //토큰 존재X
+            2000 -> {
+                showCustomToast("$message")
+            }
+
+            //유효하지 않은 토큰
+            3001 -> {
+                showCustomToast("$message")
+            }
+
         }
     }
 }

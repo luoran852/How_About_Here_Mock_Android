@@ -1,13 +1,12 @@
 package com.softsquared.template.kotlin.src.main.myPage
 
+import com.softsquared.template.kotlin.src.main.myPage.model.UserResponse
+
+
 interface MyPageFragmentView {
 
-    fun onGetUserSuccess(response: com.softsquared.template.kotlin.src.main.myPage.model.UserResponse)
+    fun onPostMyPageSuccess(response: UserResponse)
 
-    fun onGetUserFailure(message: String)
-
-//    fun onPostSignUpSuccess(response: SignUpResponse)
-//
-//    fun onPostSignUpFailure(message: String)
+    fun onPostMyPageFailure(message: String, response: UserResponse)
 
 }

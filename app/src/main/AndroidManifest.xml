@@ -63,6 +63,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".src.main.kakaoSignUp.KaKaoSignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
         <intent-filter>

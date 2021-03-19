@@ -17,7 +17,8 @@ class LoginEmailService(val view: LoginEmailActivityView) {
                 Callback<LoginEmailResponse> {
             override fun onResponse(call: Call<LoginEmailResponse>, response: Response<LoginEmailResponse>) {
                 view.onPostLoginEmailSuccess(response.body() as LoginEmailResponse)
-                Log.e(TAG, "${response.body()}")
+                Log.e(TAG, "jwt? ${response.body()}")
+
             }
 
             override fun onFailure(call: Call<LoginEmailResponse>, t: Throwable) {

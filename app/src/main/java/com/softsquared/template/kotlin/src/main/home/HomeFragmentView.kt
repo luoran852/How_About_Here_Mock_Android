@@ -4,9 +4,9 @@ import com.softsquared.template.kotlin.src.main.home.models.UserResponse
 
 interface HomeFragmentView {
 
-    fun onGetUserSuccess(response: UserResponse)
-
-    fun onGetUserFailure(message: String)
+//    fun onGetUserSuccess(response: UserResponse)
+//
+//    fun onGetUserFailure(message: String)
 
 //    fun onPostSignUpSuccess(response: SignUpResponse)
 //

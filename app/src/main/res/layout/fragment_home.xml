@@ -1,38 +1,581 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".src.main.home.HomeFragment">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/home_button_try_get_jwt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/home_btn_try_get_http_method" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/home_et_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/home_et_id" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/home_et_pw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/home_et_pw" />
+            <ImageView
+                android:id="@+id/home_top_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_home_how_about_here"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="13dp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/home_btn_try_post_http_method"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/home_btn_try_post_http_method" />
+            <TableLayout
+                android:id="@+id/table_logos"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:columnCount="4"
+                android:orientation="vertical"
+                android:rowCount="4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_top_logo">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_premium_top1"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_black_1"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_premium_top1"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_black_1"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="블랙"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_sale_top2"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_motel_2"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_sale_top2"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_motel_2"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="블랙"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_top3"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_hotel_3"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_top3"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_hotel_3"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="블랙"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_private_top4"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_pansion_4"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_private_top4"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_pansion_4"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="블랙"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_top_5"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_resort_4"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_top_5"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_resort_4"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="리조트"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_top6"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_camp_6"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_top6"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_camp_6"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="캠핑ㆍ글램핑"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_top7"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_guest_7"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_top7"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_guest_7"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="게하ㆍ한옥"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_mobile_ticket_top8"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_activity_8"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_mobile_ticket_top8"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_activity_8"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="액티비티"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_theme_top_9"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_taste_motel_9"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_theme_top_9"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_taste_motel_9"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="취향모텔"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_top10"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_chile_10"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_top10"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_chile_10"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="아이랑"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_top11"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_pet_11"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_top11"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_pet_11"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="반려견이랑"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_restaurant_top12"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_mango_plate_12"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_restaurant_top12"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_mango_plate_12"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="망고플레이트"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_Hot_top_13"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_down_challenge_13"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_Hot_top_13"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_down_challenge_13"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="최저가챌린지"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_safe_top14"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_free_cancel_14"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_safe_top14"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_free_cancel_14"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="무료취소룸"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_top15"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_jeju_15"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_top15"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_jeju_15"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="제주여행"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ic_home_chance_top16"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_top_premium_1" />
+
+                        <ImageView
+                            android:id="@+id/ic_home_sale_motel_16"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@id/ic_home_chance_top16"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_home_black_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ic_home_sale_motel_16"
+                            android:layout_alignParentBottom="false"
+                            android:layout_centerHorizontal="true"
+                            android:text="할인모텔"
+                            android:textColor="#000000" />
+
+                    </RelativeLayout>
+
+                </TableRow>
+            </TableLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+
 
 </LinearLayout>

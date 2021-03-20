@@ -2,6 +2,7 @@ package com.softsquared.template.kotlin.src.main.loginEmail
 
 import android.os.Bundle
 import android.util.Log
+import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityLoginEmailBinding
 import com.softsquared.template.kotlin.src.main.loginEmail.model.LoginEmailResponse
@@ -35,6 +36,18 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
     //post 성공시
     override fun onPostLoginEmailSuccess(response: LoginEmailResponse) {
         dismissLoadingDialog()
+
+        //jwt값 sharedpreference에 저장
+        Log.e(TAG, "${response.result[0].jwt}")
+
+        // SharedPreferences 의 데이터를 저장/편집을 위해 Editor 변수를 선언
+        val editor = ApplicationClass.sSharedPreferences.edit()
+
+        // key값에 value값을 저장
+        editor.putString(ApplicationClass.X_ACCESS_TOKEN, response.result[0].jwt)
+
+        // 메모리에 있는 데이터를 저장장치에 저장함. commit
+        editor.commit()
 
         if (response.code == 1000) {
             Log.e(TAG, "onPostLoginEmailSuccess: 로그인 성공")

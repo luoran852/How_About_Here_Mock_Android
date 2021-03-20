@@ -8,18 +8,18 @@ import retrofit2.Response
 
 class HomeService(val view: HomeFragmentView) {
 
-    fun tryGetUsers(){
-        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-        homeRetrofitInterface.getUsers().enqueue(object : Callback<UserResponse>{
-            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                view.onGetUserSuccess(response.body() as UserResponse)
-            }
-
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                view.onGetUserFailure(t.message ?: "통신 오류")
-            }
-        })
-    }
+//    fun tryGetUsers(){
+//        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
+//        homeRetrofitInterface.getUsers().enqueue(object : Callback<UserResponse>{
+//            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+//                view.onGetUserSuccess(response.body() as UserResponse)
+//            }
+//
+//            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+//                view.onGetUserFailure(t.message ?: "통신 오류")
+//            }
+//        })
+//    }
 
 //    fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
 //        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)

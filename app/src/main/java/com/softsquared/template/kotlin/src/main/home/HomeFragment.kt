@@ -14,10 +14,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.homeButtonTryGetJwt.setOnClickListener {
-            showLoadingDialog(context!!)
-            HomeService(this).tryGetUsers()
-        }
+
 
 //        binding.homeBtnTryPostHttpMethod.setOnClickListener {
 //            val email = binding.homeEtId.text.toString()
@@ -29,20 +26,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
 //        }
     }
 
-    override fun onGetUserSuccess(response: UserResponse) {
-        dismissLoadingDialog()
-        for (User in response.result) {
-            Log.d("HomeFragment", User.toString())
-        }
-        binding.homeButtonTryGetJwt.text = response.message
-//        showCustomToast("Get JWT 성공")
-        showCustomToast(response.message)
-    }
-
-    override fun onGetUserFailure(message: String) {
-        dismissLoadingDialog()
-        showCustomToast("오류 : $message")
-    }
+//    override fun onGetUserSuccess(response: UserResponse) {
+//        dismissLoadingDialog()
+//        for (User in response.result) {
+//            Log.d("HomeFragment", User.toString())
+//        }
+//        binding.homeButtonTryGetJwt.text = response.message
+////        showCustomToast("Get JWT 성공")
+//        showCustomToast(response.message)
+//    }
+//
+//    override fun onGetUserFailure(message: String) {
+//        dismissLoadingDialog()
+//        showCustomToast("오류 : $message")
+//    }
 
 //    override fun onPostSignUpSuccess(response: SignUpResponse) {
 //        dismissLoadingDialog()

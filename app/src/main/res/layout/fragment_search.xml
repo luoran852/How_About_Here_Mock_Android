@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".src.main.search.SearchFragment">
+    tools:context=".src.main.search.SearchFragment"
+    android:background="#FFFFFF">
 
     <Button
         android:id="@+id/button_change_counter_text"

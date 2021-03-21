@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".src.main.myPage.MyPageFragment"
-    android:weightSum="3">
+    android:weightSum="3"
+    android:background="#FFFFFF">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,6 +31,8 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="50dp"
+                android:textColor="#777D80"
+                android:textStyle="bold"
                 android:text="지금 회원가입하고 최저가로 예약하세요!"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,8 +46,8 @@
                 android:text="회원가입/로그인 하기 >"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textSize="20dp"
+                android:fontFamily="@font/jalnan"/>
 
         </LinearLayout>
 

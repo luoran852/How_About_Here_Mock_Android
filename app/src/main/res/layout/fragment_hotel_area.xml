@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/hotel_area_back_btn"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_gravity="center_vertical"
@@ -66,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:fadingEdgeLength="20dp"
                 android:scrollbars="none"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/home_area_advertise">
@@ -109,6 +110,7 @@
                             android:layout_below="@+id/home_area_card_ad1"
                             android:layout_margin="8dp"
                             android:textColor="#000000"
+                            android:textSize="12dp"
                             android:text="봄 꽃놀이"/>
 
                     </RelativeLayout>
@@ -143,6 +145,7 @@
                             android:layout_below="@+id/home_area_card_ad2"
                             android:layout_margin="8dp"
                             android:textColor="#000000"
+                            android:textSize="12dp"
                             android:text="반나절 호캉스"/>
 
                     </RelativeLayout>
@@ -176,6 +179,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/home_area_card_ad3"
                             android:layout_margin="8dp"
+                            android:textSize="12dp"
                             android:textColor="#000000"
                             android:text="연인추천"/>
 
@@ -211,6 +215,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/home_area_card_ad4"
                             android:layout_margin="8dp"
+                            android:textSize="12dp"
                             android:textColor="#000000"
                             android:text="오션뷰"/>
 
@@ -221,15 +226,72 @@
             </HorizontalScrollView>
 
             <TextView
+                android:id="@+id/hotel_area_choice_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
                 android:text="지역 선택"
                 android:textColor="#000000"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/home_area_horizontal_scroll" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hotel_area_around_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hotel_area_choice_txt">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hotel_area_around_chip_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="false"
+                        android:text="내주변"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipEndPadding="5dp"
+                        app:chipIcon="@drawable/ic_home_area_around_btn_img"
+                        app:chipIconSize="15dp"
+                        app:chipIconVisible="true"
+                        app:chipStartPadding="5dp"
+                        app:chipStrokeColor="#E3E3E3"
+                        app:chipStrokeWidth="1dp"
+                        app:iconStartPadding="4dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hotel_area_seoul_all_chip_btn"
+                        style="@style/Widget.MaterialComponents.Chip.Entry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="false"
+                        android:text="서울 전체"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="#E3E3E3"
+                        app:chipStrokeWidth="1dp"
+                        app:closeIconTint="#CCC8C8" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -11,14 +11,13 @@ import com.softsquared.template.kotlin.src.main.hotelArea.HotelAreaFragment
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind,
         R.layout.fragment_home), HomeFragmentView {
 
-    val hotelAreaFragment: HotelAreaFragment = HotelAreaFragment()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 호텔 아이콘 클릭
         binding.homeHotel.setOnClickListener {
-            fragmentManager?.beginTransaction()?.replace(R.id.main_frm, hotelAreaFragment)
-                    ?.commitAllowingStateLoss()
+            fragmentManager?.beginTransaction()?.add(R.id.main_frm, HotelAreaFragment())
+                    ?.addToBackStack(null)?.commit()
         }
 
 

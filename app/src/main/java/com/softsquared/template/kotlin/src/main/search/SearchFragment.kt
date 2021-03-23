@@ -4,20 +4,30 @@ import android.os.Bundle
 import android.view.View
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
-import com.softsquared.template.kotlin.databinding.FragmentMyPageBinding
 import com.softsquared.template.kotlin.databinding.FragmentSearchBinding
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::bind,
         R.layout.fragment_search) {
 
-    private var mCount = 0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonChangeCounterText.setOnClickListener {
-            binding.textViewCounter.text =
-                    resources.getString(R.string.my_page_tv_counter, ++mCount)
+        childFragmentManager.beginTransaction()
+                .replace(R.id.search_frame, SearchRoomFragment())
+                .commitAllowingStateLoss()
+
+        binding.searchTabRoom.setOnClickListener(){
+            childFragmentManager.beginTransaction()
+                    .replace(R.id.search_frame, SearchRoomFragment())
+                    .commitAllowingStateLoss()
         }
+
+        binding.searchTabActivity.setOnClickListener(){
+            childFragmentManager.beginTransaction()
+                    .replace(R.id.search_frame, SearchActivityFragment())
+                    .commitAllowingStateLoss()
+        }
+
     }
 
 }

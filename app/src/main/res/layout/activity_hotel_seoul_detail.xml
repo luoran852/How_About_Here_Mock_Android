@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/acc_img"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_hotel_seoul_detail" />
+
+            <TextView
+                android:id="@+id/acc_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/jalnan"
+                android:text="4성급"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acc_img" />
+
+            <TextView
+                android:id="@+id/acc_special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[반짝특가]"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/acc_star"
+                app:layout_constraintTop_toBottomOf="@+id/acc_star" />
+
+            <TextView
+                android:id="@+id/acc_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="호텔 리베라"
+                android:textSize="15dp"
+                app:layout_constraintStart_toEndOf="@+id/acc_special"
+                app:layout_constraintTop_toTopOf="@+id/acc_special" />
+
+            <ImageView
+                android:id="@+id/map_icon"
+                android:layout_width="25dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_hotel_seoul_detail_location"
+                app:layout_constraintStart_toStartOf="@+id/acc_star"
+                app:layout_constraintTop_toBottomOf="@+id/acc_special" />
+
+            <TextView
+                android:id="@+id/acc_where"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울 강남구 청담동 53-7"
+                app:layout_constraintStart_toEndOf="@+id/map_icon"
+                app:layout_constraintTop_toTopOf="@+id/map_icon" />
+
+            <TextView
+                android:id="@+id/acc_show_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="지도보기 >"
+                android:textColor="@color/colorGreyText"
+                app:layout_constraintStart_toEndOf="@+id/acc_where"
+                app:layout_constraintTop_toTopOf="@+id/map_icon" />
+
+            <ImageView
+                android:id="@+id/star_icon"
+                android:layout_width="25dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_search_rating_star"
+                app:layout_constraintStart_toStartOf="@+id/acc_star"
+                app:layout_constraintTop_toBottomOf="@+id/map_icon" />
+
+            <TextView
+                android:id="@+id/acc_star_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9.1"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/map_icon"
+                app:layout_constraintTop_toTopOf="@+id/star_icon" />
+
+            <TextView
+                android:id="@+id/acc_show_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="리뷰 1778개 보기 >"
+                android:textColor="@color/colorGreyText"
+                app:layout_constraintStart_toEndOf="@+id/acc_star_score"
+                app:layout_constraintTop_toTopOf="@+id/star_icon" />
+
+            <include
+                android:id="@+id/event_activity"
+                layout="@layout/activity_hotel_seoul_detail_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/star_icon" />
+
+            <include
+                android:id="@+id/room_activity"
+                layout="@layout/activity_hotel_seoul_detail_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/event_activity" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#EAEAEA"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room_activity" />
+
+            <TextView
+                android:id="@+id/room_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="당 호텔은 코로나 19 확산 방지를 위하여 고성능 열화상 카메라를 통한 발열 체크 중이며, 발열 증상이 확인되면 관할 보건소 및 담당자에세 통보, 선별 진료를 받을 수 있도록 조치하고 있습니다."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+            <include
+                android:id="@+id/room_facility"
+                layout="@layout/activity_hotel_seoul_detail_facility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room_info" />
+
+            <include
+                android:id="@+id/room_extra_info"
+                layout="@layout/activity_hotel_seoul_detail_notice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room_facility" />
+
+            <include
+                android:id="@+id/review"
+                layout="@layout/activity_hotel_seoul_detail_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room_extra_info" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

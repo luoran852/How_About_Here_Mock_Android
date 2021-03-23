@@ -3,7 +3,6 @@ package com.softsquared.template.kotlin.src.main.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.user.UserApiClient
@@ -12,11 +11,10 @@ import com.softsquared.template.kotlin.config.ApplicationClass.Companion.X_ACCES
 import com.softsquared.template.kotlin.config.ApplicationClass.Companion.sSharedPreferences
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityLoginBinding
-import com.softsquared.template.kotlin.src.main.Agreement.AgreementActivity
+import com.softsquared.template.kotlin.src.main.agreement.AgreementActivity
 import com.softsquared.template.kotlin.src.main.login.model.LoginResponse
 import com.softsquared.template.kotlin.src.main.login.model.PostLoginRequest
 import com.softsquared.template.kotlin.src.main.loginEmail.LoginEmailActivity
-import com.softsquared.template.kotlin.src.main.myPage.MyPageFragment
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate),
     LoginActivityView {

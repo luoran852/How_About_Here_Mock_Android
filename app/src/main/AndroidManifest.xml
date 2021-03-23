@@ -45,7 +45,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".src.main.Agreement.AgreementActivity"
+            android:name=".src.main.agreement.AgreementActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 

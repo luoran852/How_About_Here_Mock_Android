@@ -9,8 +9,8 @@ import com.softsquared.template.kotlin.config.ApplicationClass.Companion.TAG
 import com.softsquared.template.kotlin.config.ApplicationClass.Companion.X_ACCESS_TOKEN
 import com.softsquared.template.kotlin.config.ApplicationClass.Companion.sSharedPreferences
 import com.softsquared.template.kotlin.config.BaseFragment
-import com.softsquared.template.kotlin.config.XAccessTokenInterceptor
 import com.softsquared.template.kotlin.databinding.FragmentMyPageBinding
+import com.softsquared.template.kotlin.src.main.hotelReservCheck.ReservCheckActivity
 import com.softsquared.template.kotlin.src.main.login.LoginActivity
 import com.softsquared.template.kotlin.src.main.myPage.model.PostMyPageRequest
 import com.softsquared.template.kotlin.src.main.myPage.model.UserResponse
@@ -32,6 +32,11 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(FragmentMyPageBinding
 
         binding.myPageLoginLinearLayout.setOnClickListener {
             val intent = Intent(getActivity(), LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.myPageList1.setOnClickListener {
+            val intent = Intent(getActivity(), ReservCheckActivity::class.java)
             startActivity(intent)
         }
 

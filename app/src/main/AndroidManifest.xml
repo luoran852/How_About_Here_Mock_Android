@@ -67,6 +67,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".src.main.hotelSeoulDetail.HotelSeoulDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".src.main.hotelSeoulRoom.HotelSeoulRoomActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".src.main.hotelReservCheck.ReservCheckActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
         <intent-filter>
             <action android:name="android.intent.action.VIEW" />

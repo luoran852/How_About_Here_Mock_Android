@@ -25,6 +25,8 @@
 
     <color name="black">#000000</color>
 
+    <color name="greyForButton">#A6D6D6D6</color>
+
     <color name="whiteForBackground">#FFFFFF</color>
 
     <color name="blackForText">#B1B1B1</color>

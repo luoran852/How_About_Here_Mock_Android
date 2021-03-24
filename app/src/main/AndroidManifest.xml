@@ -71,7 +71,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".src.main.hotelSeoulRoom.HotelSeoulRoomActivity"
+        <activity android:name=".src.main.hotelSeoulAcm.HotelSeoulAcmActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 

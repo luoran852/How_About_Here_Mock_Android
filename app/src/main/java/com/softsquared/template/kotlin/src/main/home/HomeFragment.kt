@@ -1,5 +1,6 @@
 package com.softsquared.template.kotlin.src.main.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.FragmentManager
@@ -7,6 +8,8 @@ import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
 import com.softsquared.template.kotlin.databinding.FragmentHomeBinding
 import com.softsquared.template.kotlin.src.main.hotelArea.HotelAreaFragment
+import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.HotelSeoulDetailActivity
+import com.softsquared.template.kotlin.src.main.login.LoginActivity
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind,
         R.layout.fragment_home), HomeFragmentView {
@@ -20,6 +23,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
                     ?.addToBackStack(null)?.commit()
         }
 
+        //호텔 detail 액티비티 부르기(모텔 아이콘으로 test)
+        binding.icHomeMotel2.setOnClickListener {
+            val intent = Intent(getActivity(), HotelSeoulDetailActivity::class.java)
+            startActivity(intent)
+        }
 
 //        binding.homeBtnTryPostHttpMethod.setOnClickListener {
 //            val email = binding.homeEtId.text.toString()

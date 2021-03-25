@@ -50,21 +50,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="15dp"
-            android:text="1" />
+            android:layout_gravity="center_vertical"
+            android:text="ㆍ만족도 최상의 혜택 모아~[36시간 스테이]" />
 
         <TextView
             android:id="@+id/text_event2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="15dp"
-            android:text="2" />
+            android:text="ㆍ인기 상품! [조식 2인 패키지]" />
 
         <TextView
             android:id="@+id/text_event3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="15dp"
-            android:text="3" />
+            android:text="ㆍ기다리던 구매~찬스! [특가+조식]" />
 
     </LinearLayout>
 

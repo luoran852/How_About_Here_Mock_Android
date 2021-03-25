@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.softsquared.template.kotlin.R
+import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.model.Result
 
 class SeoulAllItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

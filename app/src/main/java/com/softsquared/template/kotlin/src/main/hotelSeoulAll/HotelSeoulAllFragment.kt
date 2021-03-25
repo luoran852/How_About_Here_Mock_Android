@@ -2,6 +2,7 @@ package com.softsquared.template.kotlin.src.main.hotelSeoulAll
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
@@ -28,6 +29,11 @@ class HotelSeoulAllFragment : BaseFragment<FragmentHotelSeoulAllBinding>(
         1, GridLayoutManager.VERTICAL, false)
 
         binding.hotelSeoulAllRecyclerViewItems.adapter = this.seoulAllRecyclerViewAdapter
+
+        //호텔 detail 액티비티 부르기
+
+
+
 
     }
 

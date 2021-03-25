@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_noti"
+        android:id="@+id/rv_notice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -46,7 +46,7 @@
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_noti" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_notice" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_info"
@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rv_info" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_cancel"
+        android:id="@+id/rv_refund"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"

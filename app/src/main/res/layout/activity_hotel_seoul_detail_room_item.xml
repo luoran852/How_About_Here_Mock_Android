@@ -22,7 +22,16 @@
         android:layout_marginTop="15dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/textView29">
+
+        <ImageView
+            android:id="@+id/img_hotel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_hotel_detail_room_list"/>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/room_name"
@@ -35,7 +44,7 @@
         app:layout_constraintTop_toTopOf="@+id/cardView2" />
 
     <TextView
-        android:id="@+id/room_name2"
+        android:id="@+id/room_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10000원"

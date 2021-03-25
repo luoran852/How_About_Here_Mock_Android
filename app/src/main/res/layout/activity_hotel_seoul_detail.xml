@@ -143,7 +143,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/room_activity" />
 
             <TextView
-                android:id="@+id/room_info"
+                android:id="@+id/room_intro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -151,6 +151,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
 
             <include
                 android:id="@+id/room_facility"
@@ -160,7 +161,7 @@
                 android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/room_info" />
+                app:layout_constraintTop_toBottomOf="@+id/room_intro" />
 
             <include
                 android:id="@+id/room_extra_info"

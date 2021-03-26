@@ -3,8 +3,8 @@ package com.softsquared.template.kotlin.src.main.hotelReservCheck
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.softsquared.template.kotlin.src.main.hotelReservCheckAfter.ReservCheckBeforeFragment
-import com.softsquared.template.kotlin.src.main.hotelReservCheckBefore.ReservCheckAfterFragment
+import com.softsquared.template.kotlin.src.main.hotelReservCheckBefore.ReservCheckBeforeFragment
+import com.softsquared.template.kotlin.src.main.hotelReservCheckAfter.ReservCheckAfterFragment
 import com.softsquared.template.kotlin.src.main.hotelReservCheckCanceled.ReservCheckCanceledFragment
 
 

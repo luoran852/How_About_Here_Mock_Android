@@ -1,11 +1,14 @@
 package com.softsquared.template.kotlin.src.main.hotelReservCheck
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View.inflate
-import androidx.databinding.DataBindingUtil
-import com.google.android.material.tabs.TabLayout
+import com.google.android.material.internal.ContextUtils.getActivity
+import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityReservationCheckBinding
+import com.softsquared.template.kotlin.src.main.hotelReservCheckBefore.ReservCheckBeforeFragment
+import com.softsquared.template.kotlin.src.main.search.SearchNewFragment
+import com.softsquared.template.kotlin.src.main.search.SearchRoomFragment
 
 
 class ReservCheckActivity : BaseActivity<ActivityReservationCheckBinding>

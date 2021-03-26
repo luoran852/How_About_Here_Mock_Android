@@ -1,5 +1,6 @@
 package com.softsquared.template.kotlin.src.main.hotelSeoulAll
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -8,6 +9,7 @@ import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
 import com.softsquared.template.kotlin.databinding.FragmentHotelSeoulAllBinding
 import com.softsquared.template.kotlin.src.main.hotelSeoulAll.recyclerview.SeoulAllRecyclerViewAdapter
+import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.HotelSeoulDetailActivity
 
 class HotelSeoulAllFragment : BaseFragment<FragmentHotelSeoulAllBinding>(
     FragmentHotelSeoulAllBinding::bind, R.layout.fragment_hotel_seoul_all) {
@@ -31,7 +33,10 @@ class HotelSeoulAllFragment : BaseFragment<FragmentHotelSeoulAllBinding>(
         binding.hotelSeoulAllRecyclerViewItems.adapter = this.seoulAllRecyclerViewAdapter
 
         //호텔 detail 액티비티 부르기
-
+        binding.hotelSeoulMdPickLayout.setOnClickListener {
+            val intent = Intent(getActivity(), HotelSeoulDetailActivity::class.java)
+            startActivity(intent)
+        }
 
 
 

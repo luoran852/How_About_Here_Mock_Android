@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:text="ㆍ체크인 15:00~"
+        android:text="ㆍ체크인 15:00 | 체크아웃: 12:00\nㆍ22시 이후 체크인 시 호텔 프론트 문의\nㆍ무료 Wi-Fi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"

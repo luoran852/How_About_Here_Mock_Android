@@ -34,6 +34,7 @@
         android:id="@+id/search_pickers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/search_bar"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -76,16 +77,18 @@
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_pickers" />
+
     <LinearLayout
         android:id="@+id/top_fav_content_num"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="10dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="@+id/top_fav_content"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/top_fav_content"
         app:layout_constraintTop_toBottomOf="@+id/top_fav_content">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -110,8 +113,8 @@
                 android:layout_marginStart="30dp"
                 android:text="경주"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -142,8 +145,8 @@
                 android:layout_marginStart="30dp"
                 android:text="제주"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -172,8 +175,8 @@
                 android:layout_marginStart="30dp"
                 android:text="여수"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -202,8 +205,8 @@
                 android:layout_marginStart="30dp"
                 android:text="강릉"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -232,8 +235,8 @@
                 android:layout_marginStart="30dp"
                 android:text="부산"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -262,8 +265,8 @@
                 android:layout_marginStart="30dp"
                 android:text="속초"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -292,8 +295,8 @@
                 android:layout_marginStart="30dp"
                 android:text="제주도"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -322,8 +325,8 @@
                 android:layout_marginStart="30dp"
                 android:text="통영"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -352,8 +355,8 @@
                 android:layout_marginStart="30dp"
                 android:text="가평"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -382,8 +385,8 @@
                 android:layout_marginStart="30dp"
                 android:text="포항 "
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -1,4 +1,4 @@
-package com.softsquared.template.kotlin.src.main.hotelReservCheckBefore
+package com.softsquared.template.kotlin.src.main.hotelReservCheckAfter
 
 import android.os.Bundle
 import android.util.Log

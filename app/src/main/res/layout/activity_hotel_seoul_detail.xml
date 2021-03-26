@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,6 +16,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/room_list1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -26,7 +28,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/img_hotel_seoul_detail" />
+                app:srcCompat="@drawable/img_room" />
 
             <TextView
                 android:id="@+id/acc_star"
@@ -35,43 +37,38 @@
                 android:layout_margin="15dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/jalnan"
-                android:text="4성급"
+                android:text="5성급"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/acc_img" />
 
             <TextView
-                android:id="@+id/acc_special"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="[반짝특가]"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/acc_star"
-                app:layout_constraintTop_toBottomOf="@+id/acc_star" />
-
-            <TextView
                 android:id="@+id/acc_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="호텔 리베라"
-                android:textSize="15dp"
-                app:layout_constraintStart_toEndOf="@+id/acc_special"
-                app:layout_constraintTop_toTopOf="@+id/acc_special" />
+                android:layout_margin="15dp"
+                android:text="노보텔 앰배서더 서울 용산"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/acc_where"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acc_star" />
 
             <ImageView
                 android:id="@+id/map_icon"
                 android:layout_width="25dp"
                 android:layout_height="22dp"
-                android:layout_marginTop="15dp"
                 android:src="@drawable/ic_hotel_seoul_detail_location"
                 app:layout_constraintStart_toStartOf="@+id/acc_star"
-                app:layout_constraintTop_toBottomOf="@+id/acc_special" />
+                app:layout_constraintTop_toBottomOf="@id/acc_name"
+                tools:layout_editor_absoluteY="379dp" />
 
             <TextView
                 android:id="@+id/acc_where"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="서울 강남구 청담동 53-7"
+                android:text="서울 용산구 한강로3가 40-969"
                 app:layout_constraintStart_toEndOf="@+id/map_icon"
                 app:layout_constraintTop_toTopOf="@+id/map_icon" />
 
@@ -81,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="지도보기 >"
-                android:textColor="@color/colorGreyText"
+                android:textColor="@color/colorBtn"
                 app:layout_constraintStart_toEndOf="@+id/acc_where"
                 app:layout_constraintTop_toTopOf="@+id/map_icon" />
 
@@ -98,7 +95,7 @@
                 android:id="@+id/acc_star_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9.1"
+                android:text="9.5"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/map_icon"
                 app:layout_constraintTop_toTopOf="@+id/star_icon" />
@@ -108,8 +105,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="리뷰 1778개 보기 >"
-                android:textColor="@color/colorGreyText"
+                android:text="리뷰 433개 보기 >"
+                android:textColor="@color/colorBtn"
                 app:layout_constraintStart_toEndOf="@+id/acc_star_score"
                 app:layout_constraintTop_toTopOf="@+id/star_icon" />
 

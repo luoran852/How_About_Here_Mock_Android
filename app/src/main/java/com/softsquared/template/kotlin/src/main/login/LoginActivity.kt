@@ -11,10 +11,10 @@ import com.softsquared.template.kotlin.config.ApplicationClass.Companion.X_ACCES
 import com.softsquared.template.kotlin.config.ApplicationClass.Companion.sSharedPreferences
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityLoginBinding
-import com.softsquared.template.kotlin.src.main.agreement.AgreementActivity
 import com.softsquared.template.kotlin.src.main.login.model.LoginResponse
 import com.softsquared.template.kotlin.src.main.login.model.PostLoginRequest
 import com.softsquared.template.kotlin.src.main.loginEmail.LoginEmailActivity
+import com.softsquared.template.kotlin.src.main.required.RequiredInfoActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate),
     LoginActivityView {
@@ -108,7 +108,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         }
 
         binding.signUpEmail.setOnClickListener {
-            val intent = Intent(this, AgreementActivity::class.java)
+            val intent = Intent(this, RequiredInfoActivity::class.java)
             startActivity(intent)
         }
     }

@@ -50,7 +50,7 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(FragmentMyPageBinding
         if (response.code == 1000) {
             Log.e(TAG, "onPostMyPageSuccess: 마이페이지 post 성공")
             Log.e(TAG, "mypage : X_ACCESS_TOKEN? $XACCESSTOKEN")
-            response.message?.let { showCustomToast(it) }
+//            response.message?.let { showCustomToast(it) }
 //            finish()
         }
     }

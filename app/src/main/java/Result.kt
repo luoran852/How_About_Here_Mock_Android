@@ -1,0 +1,21 @@
+data class Result(
+    val acmIdx: Int = 0,
+    val categoryIdx: Int = 0,
+    val checkIn: String = "",
+    val checkOut: String = "",
+    val facility: List<String> = listOf(),
+    val img: List<String> = listOf(),
+    val info: List<String> = listOf(),
+    val intro: String = "",
+    val likeStatus: Int = 0,
+    val location: String = "",
+    val name: String = "",
+    val night: String = "",
+    val notice: List<String> = listOf(),
+    val rating: List<String> = listOf(),
+    val refund: List<String> = listOf(),
+    val reviewAverage: Double = 0.0,
+    val reviewCnt: Int = 0,
+    val reviews: List<Review> = listOf(),
+    val rooms: List<Room> = listOf()
+)

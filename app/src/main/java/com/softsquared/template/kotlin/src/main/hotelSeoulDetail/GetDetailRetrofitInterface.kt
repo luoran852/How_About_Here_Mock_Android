@@ -9,8 +9,8 @@ interface GetDetailRetrofitInterface {
 
     @GET("/categories/1/acms/1?checkIn=20210317&checkOut=20210318")
     fun getHotelDetail(
-            @Query("checkIn") checkIn: String?,
-            @Query("checkOut") checkOut: String?
+            @Query("checkIn") checkIn: Int?,
+            @Query("checkOut") checkOut: Int?
     ): Call<HotelDetailResponse>
 
 }

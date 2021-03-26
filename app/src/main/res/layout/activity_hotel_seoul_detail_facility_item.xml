@@ -7,18 +7,86 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/img_facility"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_margin="15dp"
-        android:src="@color/redForText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/facility_img1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/aircon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/facility_img2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/bath_amenity"
+                app:layout_constraintStart_toEndOf="@id/facility_img1"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/facility_img3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/bbq"
+                app:layout_constraintStart_toEndOf="@id/facility_img2"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/facility_im4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/convenience"
+                app:layout_constraintStart_toEndOf="@id/facility_img3"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/facility_im5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/breakfast"
+                app:layout_constraintStart_toEndOf="@id/facility_im4"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/facility_im6"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/tv"
+                app:layout_constraintStart_toEndOf="@id/facility_im5"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/facility_im7"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/wifi"
+                app:layout_constraintStart_toEndOf="@id/facility_im6"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/facility_im8"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/elevator"
+                app:layout_constraintStart_toEndOf="@id/facility_im7"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </HorizontalScrollView>
+
 
 <!--    <TextView-->
 <!--        android:id="@+id/text_facility"-->

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:text="ㆍ추후 안내시까지~"
+        android:text="ㆍ[부대시설 및 음식업장 운영 안내]\nㆍ-이그제큐티브 라운지 일시 운영중단"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"

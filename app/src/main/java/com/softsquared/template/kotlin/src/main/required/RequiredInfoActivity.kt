@@ -22,7 +22,7 @@ class RequiredInfoActivity : BaseActivity<ActivityRequiredInfoBinding>
             finish()
         }
 
-        binding.requiredInfoBtn.setOnClickListener {
+        binding.requiredNextBtn.setOnClickListener {
             val id = binding.editEmail.text.toString()
             val password = binding.editPassword.text.toString()
             val nickname = binding.editNickname.text.toString()

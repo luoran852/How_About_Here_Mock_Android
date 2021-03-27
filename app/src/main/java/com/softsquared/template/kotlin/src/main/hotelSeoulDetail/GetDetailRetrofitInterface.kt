@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface GetDetailRetrofitInterface {
 
-    @GET("/categories/1/acms/1?checkIn=20210317&checkOut=20210318")
+    @GET("/categories/2/acms/1?checkIn=20210401&checkOut=20210402")
     fun getHotelDetail(
             @Query("checkIn") checkIn: Int?,
             @Query("checkOut") checkOut: Int?

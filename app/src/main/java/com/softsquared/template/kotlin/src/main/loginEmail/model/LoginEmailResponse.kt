@@ -1,12 +1,15 @@
 package com.softsquared.template.kotlin.src.main.loginEmail.model
 
+
 import com.google.gson.annotations.SerializedName
-import com.softsquared.template.kotlin.config.BaseResponse
 
 data class LoginEmailResponse(
-        // 베이스 리스폰스를 상속 받았으므로, 아래 내용은 포함이 되었습니다.
-        @SerializedName("result") val result: ArrayList<ResultLoginEmail>,
-        @SerializedName("isSuccess") val isSuccess: Boolean,
-        @SerializedName("code") val code: Int,
-        @SerializedName("message") val message: String
-) //: BaseResponse()
+    @SerializedName("code")
+    val code: Int = 0,
+    @SerializedName("isSuccess")
+    val isSuccess: Boolean = false,
+    @SerializedName("message")
+    val message: String = "",
+    @SerializedName("result")
+    val result: List<Result> = listOf()
+)

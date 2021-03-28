@@ -19,7 +19,6 @@ import com.softsquared.template.kotlin.src.main.required.RequiredInfoActivity
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate),
     LoginActivityView {
 
-    private var mCount = 0
     val TAG : String = "태그"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,7 +117,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         dismissLoadingDialog()
 
         //jwt값 sharedpreference에 저장
-        Log.e(TAG, "${response.result[0].jwt}")
+        Log.e(TAG, "카카오톡으로 로그인 성공, jwt = ${response.result[0].jwt}")
 
         // SharedPreferences 의 데이터를 저장/편집을 위해 Editor 변수를 선언
         val editor = sSharedPreferences.edit()

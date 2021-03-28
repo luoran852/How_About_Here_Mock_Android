@@ -2,8 +2,6 @@ package com.softsquared.template.kotlin.src.main.required
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
-import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityRequiredInfoBinding
 import com.softsquared.template.kotlin.src.main.required.model.PostSignUpRequest

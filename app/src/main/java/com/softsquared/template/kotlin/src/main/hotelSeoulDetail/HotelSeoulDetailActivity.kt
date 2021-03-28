@@ -40,6 +40,7 @@ class HotelSeoulDetailActivity : BaseActivity<ActivityHotelSeoulDetailBinding>
         if(response.code == 1000) {
 
             Log.e(TAG, "onGetHotelDetailSuccess: ${response.message}")
+            Log.e(TAG, "${response.result[0]}")
             // 숙소 상세 조회 성공
             response.message?.let { showCustomToast(it) }
 

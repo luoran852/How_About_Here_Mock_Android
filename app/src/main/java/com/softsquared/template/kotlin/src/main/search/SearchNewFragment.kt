@@ -25,22 +25,26 @@ class SearchNewFragment : BaseFragment<FragmentSearchDetailBinding>(FragmentSear
         val checkIn = 20210401
         val checkOut = 20210402
         val alignIdx = 1
+
+        showLoadingDialog(context!!)
         SearchService(this).tryGetSearch(keyword, checkIn, checkOut, alignIdx)
 
     }
 
     override fun onGetSearchSuccess(response: SearchResponse) {
-//        dismissLoadingDialog()
+        dismissLoadingDialog()
 
         if(response.code == 1000) {
 
             Log.e(TAG, "onGetSearchSuccess: ${response.message}")
-            Log.e(TAG, "${response.result[0]}")
+            Log.e(TAG, "${response.result}")
             // 숙소 검색 조회 성공
             response.message?.let { showCustomToast(it) }
 
             binding.searchKeywordTxt.text = keyword
             val result = response.result
+
+            result[0].acmIdx
 
             var searchList: List<Result> = result
             binding.searchDetailRecyclerViewItems.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)

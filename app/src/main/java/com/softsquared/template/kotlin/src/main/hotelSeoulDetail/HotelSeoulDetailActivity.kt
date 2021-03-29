@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityHotelSeoulDetailBinding
 import com.softsquared.template.kotlin.src.main.hotelSeoulAcm.HotelSeoulAcmActivity
@@ -23,19 +24,22 @@ class HotelSeoulDetailActivity : BaseActivity<ActivityHotelSeoulDetailBinding>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val acmIdx = intent.getIntExtra("acmIdx", 0)
         val checkIn = 20210401
         val checkOut = 20210402
-        HotelDetailService(this).tryGetHotelDetail(checkIn, checkOut)
 
-        binding.roomList1.setOnClickListener {
-            val intent = Intent(this, HotelSeoulAcmActivity::class.java)
-            startActivity(intent)
-        }
+        val editor = ApplicationClass.sSharedPreferences.edit()
+        editor.putInt("acmIdx", acmIdx)
+        editor.apply()
+        editor.commit()
+        showLoadingDialog(this)
+        HotelDetailService(this).tryGetHotelDetail(acmIdx, checkIn, checkOut)
+
     }
 
     //get 성공
     override fun onGetHotelDetailSuccess(response: HotelDetailResponse) {
-//        dismissLoadingDialog()
+        dismissLoadingDialog()
 
         if(response.code == 1000) {
 
@@ -46,10 +50,10 @@ class HotelSeoulDetailActivity : BaseActivity<ActivityHotelSeoulDetailBinding>
 
             val result = response.result
 
-//            //메인 사진
-            Glide.with(this).load(result[0].img[0]).into(binding.accImg)
+            //메인 사진
+            Glide.with(this).load(result[0]?.img[0]).into(binding.accImg)
 
-//            숙소 정보
+            //숙소 정보
             binding.accName.text = result[0].name //노보텔 앰배서더
             binding.accWhere.text = result[0].location //서울 용산구
             binding.accStarScore.text = result[0].reviewAverage.toString() //(평점)4.9
@@ -58,7 +62,7 @@ class HotelSeoulDetailActivity : BaseActivity<ActivityHotelSeoulDetailBinding>
             binding.roomActivity.textCheckOut.text = result[0].checkOut //3.26 금
             binding.roomActivity.textSleep.text = result[0].night //1박
 
-//            룸 리스트
+            //룸 리스트
             var RoomList: List<Room>? = result[0].rooms
             binding.roomActivity.rvRoom.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
             binding.roomActivity.rvRoom.setHasFixedSize(true)

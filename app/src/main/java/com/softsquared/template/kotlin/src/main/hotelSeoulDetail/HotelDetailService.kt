@@ -11,9 +11,9 @@ import retrofit2.Response
 
 class HotelDetailService(val view: HotelSeoulDetailActivityView) {
 
-    fun tryGetHotelDetail(checkIn : Int, checkOut : Int) {
+    fun tryGetHotelDetail(acmIdx : Int, checkIn : Int, checkOut : Int) {
         val getDetailRetrofitInterface = ApplicationClass.sRetrofit.create(GetDetailRetrofitInterface::class.java)
-        getDetailRetrofitInterface.getHotelDetail(checkIn, checkOut).enqueue(object :
+        getDetailRetrofitInterface.getHotelDetail(acmIdx, checkIn, checkOut).enqueue(object :
             Callback<HotelDetailResponse> {
             override fun onResponse(
                 call: Call<HotelDetailResponse>,

@@ -1,16 +1,21 @@
 package com.softsquared.template.kotlin.src.main.search.recyclerview
 
 import android.content.Intent
+import android.content.Intent.getIntent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.softsquared.template.kotlin.R
+import com.softsquared.template.kotlin.config.ApplicationClass.Companion.TAG
 import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.HotelSeoulDetailActivity
 import com.softsquared.template.kotlin.src.main.search.model.Result
+
 
 class SearchRecyclerViewAdapter(private val SearchList: List<Result>) : RecyclerView.Adapter<SearchRecyclerViewAdapter.CustomViewHolder>() {
 
@@ -46,8 +51,11 @@ class SearchRecyclerViewAdapter(private val SearchList: List<Result>) : Recycler
 
 
         holder.itemView.setOnClickListener {
+            Log.e(TAG, "onBindViewHolder: 검색했을 때 recyclerview item클릭됨")
             val intent = Intent(holder.itemView.context, HotelSeoulDetailActivity::class.java)
-
+            Log.e(TAG, "recyclerview에서 클릭된 item의 acmIdx = ${SearchList.get(position).acmIdx}")
+            intent.putExtra("acmIdx", SearchList.get(position).acmIdx)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
 
         }
     }

@@ -44,8 +44,6 @@ class SearchNewFragment : BaseFragment<FragmentSearchDetailBinding>(FragmentSear
             binding.searchKeywordTxt.text = keyword
             val result = response.result
 
-            result[0].acmIdx
-
             var searchList: List<Result> = result
             binding.searchDetailRecyclerViewItems.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             binding.searchDetailRecyclerViewItems.setHasFixedSize(true)

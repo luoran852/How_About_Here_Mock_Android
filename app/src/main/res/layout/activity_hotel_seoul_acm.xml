@@ -32,6 +32,7 @@
         android:id="@+id/hotel_seoul_room_scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/hotel_seoul_room_frame_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,17 +46,18 @@
                 android:id="@+id/hotel_seoul_room_img"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:scaleType="fitStart"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/art"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/art"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/hotel_seoul_room_name_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                app:cardElevation="0dp"
                 android:background="@color/white"
                 app:cardCornerRadius="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -132,6 +134,7 @@
                         android:id="@+id/hotel_seoul_room_check_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         app:layout_constraintTop_toBottomOf="@id/hotel_seoul_room_date_txt"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent">
@@ -171,7 +174,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="25dp"
                                     android:layout_marginTop="3dp"
-                                    android:text="21.03.23 (화)"
+                                    android:text="21.04.01 (목)"
                                     android:textColor="@color/black"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toBottomOf="@id/hotel_seoul_room_check_in_txt" />
@@ -204,18 +207,7 @@
 
                         </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            android:id="@+id/hotel_seoul_sleep"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1박"
-                            android:textColor="@color/black"
-                            android:background="@color/white"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            />
+
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/hotel_seoul_check_out_cardview"
@@ -252,7 +244,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="25dp"
                                     android:layout_marginTop="3dp"
-                                    android:text="21.03.24 (수)"
+                                    android:text="21.04.02 (금)"
                                     android:textColor="@color/black"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_check_out_txt" />
@@ -273,6 +265,19 @@
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                         </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/hotel_seoul_sleep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1박"
+                            android:textColor="@color/black"
+                            android:background="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/hotel_seoul_check_in_cardview"
+                            app:layout_constraintEnd_toEndOf="@id/hotel_seoul_check_out_cardview"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -295,35 +300,14 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/hotel_seoul_room_info1"
-                            android:layout_width="wrap_content"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/acm_info_recyclerview"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="ㆍ 2인 기준 최대 2인"
-                            app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_info"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="5dp"
-                            app:layout_constraintStart_toStartOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/hotel_seoul_room_info2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ㆍ 더블배드 1개"
-                            app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_info1"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="5dp"
-                            app:layout_constraintStart_toStartOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/hotel_seoul_room_info3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ㆍ 객실+욕실 / 10.2평"
-                            app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_info2"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="5dp"
-                            app:layout_constraintStart_toStartOf="parent"/>
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_margin="15dp"
+                            app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_info"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -341,7 +325,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="20dp"
-                            android:text="기본정보"
+                            android:text="편의시설"
                             android:textColor="#0B154E"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -352,8 +336,11 @@
                             android:layout_height="wrap_content"
                             android:text="ㆍ 침대, TV, 에어컨, 티테이블, 의자, 미니바, 다리미, 다리미판, 문구류, 욕실용품, 헤어드라이기"
                             app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_facility_txt"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="20dp"
+                            android:padding="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -374,7 +361,7 @@
                         android:layout_height="wrap_content"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/hotel_seoul_room_facility_layout">
+                        app:layout_constraintTop_toBottomOf="@id/hotel_seoul_room_divider">
 
                         <TextView
                             android:id="@+id/hotel_seoul_room_refund_txt"
@@ -387,46 +374,14 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/hotel_seoul_room_refund_detail1"
-                            android:layout_width="wrap_content"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/acm_refund_recyclerview"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="ㆍ 체크인 기준 2일 전: 100% 환불"
-                            app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_refund_txt"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="5dp"
-                            app:layout_constraintStart_toStartOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/hotel_seoul_room_refund_detail2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ㆍ 체크인 기준 1일 전~당일 및 no show: 환불불가"
-                            app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_refund_detail1"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="5dp"
-                            app:layout_constraintStart_toStartOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/hotel_seoul_room_refund_detail3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ㆍ 취소, 환불시 수수료가 발생합니다"
-                            app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_refund_detail2"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="5dp"
-                            app:layout_constraintStart_toStartOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/hotel_seoul_room_refund_detail4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ㆍ 공구특가 체크인일 기준 2일 17시 전까지: 100% 환불"
-                            android:textColor="@color/redForText"
-                            app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_refund_detail3"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="5dp"
-                            app:layout_constraintStart_toStartOf="parent"/>
+                            app:layout_constraintTop_toBottomOf="@id/hotel_seoul_room_refund_txt"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_margin="15dp"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -441,14 +396,18 @@
                 android:text="(주)여기어때컴퍼니는 통신판매중개자로서 통신판매의 당사자가 아니며,\n상품의 예약, 이용 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다. "
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hotel_seoul_room_detail_layout"/>
+                app:layout_constraintTop_toBottomOf="@id/hotel_seoul_room_detail_layout"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/reservation_btn_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_room_howabouthere_info"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -457,7 +416,6 @@
             android:id="@+id/hotel_seoul_room_reservation_btn"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:src="@drawable/btn_hotel_room_reservation"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -465,6 +423,5 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

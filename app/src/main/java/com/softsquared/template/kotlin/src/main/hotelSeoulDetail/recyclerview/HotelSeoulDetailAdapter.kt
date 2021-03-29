@@ -50,7 +50,7 @@ class AcmRoomAdapter(private val RoomList: List<Room>) : RecyclerView.Adapter<Ac
         holder.itemView.setOnClickListener {
             Log.e(TAG, "onBindViewHolder: 서울전체에서 recyclerview item클릭됨")
             val intent = Intent(holder.itemView.context, HotelSeoulAcmActivity::class.java)
-            Log.e(TAG, "서울전체 recyclerview에서 클릭된 item의 roomIdx = $RoomList.get(position).roomIdx")
+            Log.e(TAG, "서울전체 recyclerview에서 클릭된 item의 roomIdx = ${RoomList.get(position).roomIdx}")
             intent.putExtra("roomIdx", RoomList.get(position).roomIdx)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
 
@@ -117,7 +117,7 @@ class AcmNoticeAdapter(private val noticeList: List<String>) : RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.notice.text = noticeList.get(position)
+        holder.notice.text = "ㆍ" + noticeList.get(position)
     }
 
     override fun getItemCount(): Int {
@@ -147,7 +147,7 @@ class AcmInfoAdapter(private val infoList: List<String>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.info.text = infoList.get(position)
+        holder.info.text = "ㆍ" + infoList.get(position)
     }
 
     override fun getItemCount(): Int {
@@ -176,7 +176,7 @@ class AcmRefundAdapter(private val refundList: List<String>) : RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.refund.text = refundList.get(position)
+        holder.refund.text = "ㆍ" + refundList.get(position)
     }
 
     override fun getItemCount(): Int {

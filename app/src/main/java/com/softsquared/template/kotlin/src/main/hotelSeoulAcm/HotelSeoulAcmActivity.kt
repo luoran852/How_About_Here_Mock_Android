@@ -22,8 +22,8 @@ class HotelSeoulAcmActivity : BaseActivity<ActivityHotelSeoulAcmBinding>
         super.onCreate(savedInstanceState)
 
         val acmIdx = ApplicationClass.sSharedPreferences.getInt("acmIdx", 0) //sf에 저장된 acmIdx 가져오기
-        val checkIn = 20210401
-        val checkOut = 20210402
+        val checkIn = 20210403
+        val checkOut = 20210404
         val roomIdx = intent.getIntExtra("roomIdx", 0)
 
         Log.e(TAG, "숙소페이지에서 acmIdx = $acmIdx")

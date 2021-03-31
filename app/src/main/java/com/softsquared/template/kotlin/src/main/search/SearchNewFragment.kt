@@ -22,8 +22,8 @@ class SearchNewFragment : BaseFragment<FragmentSearchDetailBinding>(FragmentSear
 
         keyword = arguments?.getString("keyword").toString()
         Log.e(TAG, "onViewCreated: keyword = $keyword") //값 잘 받아오는지 확인
-        val checkIn = 20210401
-        val checkOut = 20210402
+        val checkIn = 20210403
+        val checkOut = 20210404
         val alignIdx = 1
 
         showLoadingDialog(context!!)

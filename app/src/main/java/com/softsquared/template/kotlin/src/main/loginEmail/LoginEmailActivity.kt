@@ -1,5 +1,6 @@
 package com.softsquared.template.kotlin.src.main.loginEmail
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.softsquared.template.kotlin.config.ApplicationClass
@@ -7,6 +8,7 @@ import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityLoginEmailBinding
 import com.softsquared.template.kotlin.src.main.loginEmail.model.LoginEmailResponse
 import com.softsquared.template.kotlin.src.main.loginEmail.model.PostLoginEmailRequest
+import com.softsquared.template.kotlin.src.main.myPage.MyPageFragment
 
 class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLoginEmailBinding::inflate),
         LoginEmailActivityView {
@@ -45,6 +47,7 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
 
         // key값에 value값을 저장
         editor1.putString(ApplicationClass.X_ACCESS_TOKEN, response.result[0].jwt)
+//        editor1.putString(ApplicationClass.X_ACCESS_TOKEN, "0")
 
         // 메모리에 있는 데이터를 저장장치에 저장함. commit
         editor1.commit()
@@ -68,6 +71,9 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
             Log.e(TAG, "userIdx 저장됐는지 확인: ${ApplicationClass.sSharedPreferences.getInt("userIdx", 0)}")
 
             finish()
+
+//            val intent = Intent(this, MyPageFragment::class.java)
+//            startActivity(intent)
         }
     }
 

@@ -14,6 +14,8 @@ import com.softsquared.template.kotlin.databinding.ActivityLoginBinding
 import com.softsquared.template.kotlin.src.main.login.model.LoginResponse
 import com.softsquared.template.kotlin.src.main.login.model.PostLoginRequest
 import com.softsquared.template.kotlin.src.main.loginEmail.LoginEmailActivity
+import com.softsquared.template.kotlin.src.main.myPage.MyPageFragment
+import com.softsquared.template.kotlin.src.main.myPage.MyPageService
 import com.softsquared.template.kotlin.src.main.required.RequiredInfoActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate),
@@ -124,6 +126,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
         // key값에 value값을 저장
         editor.putString(X_ACCESS_TOKEN, response.result[0].jwt)
+//        editor.putString(X_ACCESS_TOKEN, "0")
 
         // 메모리에 있는 데이터를 저장장치에 저장함. commit
         editor.commit()
@@ -150,6 +153,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
             Log.e(TAG, "userIdx 저장됐는지 확인: ${sSharedPreferences.getInt("userIdx", 0)}")
             Log.e(TAG, "X_ACCESS_TOKEN 저장됐는지 확인: ${sSharedPreferences.getString(X_ACCESS_TOKEN, "")}")
+
             finish()
 //            val intent = Intent(this, MyPageFragment::class.java)
 //            startActivity(intent)

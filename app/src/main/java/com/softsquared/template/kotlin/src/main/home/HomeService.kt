@@ -1,37 +1,32 @@
 package com.softsquared.template.kotlin.src.main.home
 
+import android.util.Log
 import com.softsquared.template.kotlin.config.ApplicationClass
-import com.softsquared.template.kotlin.src.main.home.models.UserResponse
+import com.softsquared.template.kotlin.src.main.home.models.HomeResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class HomeService(val view: HomeFragmentView) {
 
-//    fun tryGetUsers(){
-//        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-//        homeRetrofitInterface.getUsers().enqueue(object : Callback<UserResponse>{
-//            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-//                view.onGetUserSuccess(response.body() as UserResponse)
-//            }
-//
-//            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-//                view.onGetUserFailure(t.message ?: "통신 오류")
-//            }
-//        })
-//    }
+    fun tryGetHome() {
 
-//    fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
-//        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-//        homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse>{
-//            override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
-//                view.onPostSignUpSuccess(response.body() as SignUpResponse)
-//            }
-//
-//            override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-//                view.onPostSignUpFailure(t.message ?: "통신 오류")
-//            }
-//        })
-//    }
+        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(
+            HomeRetrofitInterface::class.java)
+
+        homeRetrofitInterface.getHome().enqueue(object : Callback<HomeResponse> {
+            override fun onResponse(call: Call<HomeResponse>, response: Response<HomeResponse>) {
+                Log.e(ApplicationClass.TAG, "onResponse: tryGetReservPage 성공, ${response.message()}")
+                view.onGetHomeSuccess(response.body() as HomeResponse)
+            }
+
+            override fun onFailure(call: Call<HomeResponse>, t: Throwable) {
+                Log.e(ApplicationClass.TAG, "onFailure: tryGetReservPage 실패, ${t.message}")
+                view.onGetHomeFailure(t.message ?: "통신 오류", this as HomeResponse)
+            }
+
+        })
+
+    }
 
 }

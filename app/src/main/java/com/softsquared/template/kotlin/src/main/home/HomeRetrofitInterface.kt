@@ -1,10 +1,14 @@
 package com.softsquared.template.kotlin.src.main.home
 
-import com.softsquared.template.kotlin.src.main.home.models.UserResponse
+import com.softsquared.template.kotlin.src.main.home.models.HomeResponse
 import retrofit2.Call
 import retrofit2.http.*
 
 interface HomeRetrofitInterface {
+
+    @GET("/home")
+    fun getHome() : Call<HomeResponse>
+
 //    @GET("/users")
 //    fun getUsers() : Call<UserResponse>
 

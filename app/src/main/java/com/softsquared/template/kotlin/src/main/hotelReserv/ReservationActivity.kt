@@ -24,8 +24,8 @@ class ReservationActivity : BaseActivity<ActivityReservationBinding>
 
         val acmIdx = ApplicationClass.sSharedPreferences.getInt("acmIdx", 0) //sf에 저장된 acmIdx 가져오기
         Log.e(TAG, "예약페이지에서 acmIdx = $acmIdx")
-        val checkIn = 20210401
-        val checkOut = 20210402
+        val checkIn = 20210403
+        val checkOut = 20210404
         val roomIdx = ApplicationClass.sSharedPreferences.getInt("roomIdx", 0) //sf에 저장된 roomIdx 가져오기
         Log.e(TAG, "예약페이지에서 roomIdx = $roomIdx")
         val userIdx = ApplicationClass.sSharedPreferences.getInt("userIdx", 0) //sf에 저장된 userIdx 가져오기

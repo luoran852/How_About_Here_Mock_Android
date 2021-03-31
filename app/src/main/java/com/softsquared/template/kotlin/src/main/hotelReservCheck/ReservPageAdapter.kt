@@ -33,6 +33,5 @@ class ReservPageAdapter(fm: FragmentManager, var mNumOfTabs: Int) :
             return "이용후"
         else
             return "취소됨"
-
     }
 }

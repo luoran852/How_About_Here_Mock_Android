@@ -1,12 +1,13 @@
 package com.softsquared.template.kotlin.src.main.home
 
-import com.softsquared.template.kotlin.src.main.home.models.UserResponse
+import com.softsquared.template.kotlin.src.main.home.models.HomeResponse
+
 
 interface HomeFragmentView {
 
-//    fun onGetUserSuccess(response: UserResponse)
-//
-//    fun onGetUserFailure(message: String)
+    fun onGetHomeSuccess(response: HomeResponse)
+
+    fun onGetHomeFailure(message: String, response: HomeResponse)
 
 //    fun onPostSignUpSuccess(response: SignUpResponse)
 //

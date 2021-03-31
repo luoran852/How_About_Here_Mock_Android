@@ -25,8 +25,8 @@ class HotelSeoulDetailActivity : BaseActivity<ActivityHotelSeoulDetailBinding>
         super.onCreate(savedInstanceState)
 
         val acmIdx = intent.getIntExtra("acmIdx", 0)
-        val checkIn = 20210401
-        val checkOut = 20210402
+        val checkIn = 20210403
+        val checkOut = 20210404
 
         val editor = ApplicationClass.sSharedPreferences.edit()
         editor.putInt("acmIdx", acmIdx)

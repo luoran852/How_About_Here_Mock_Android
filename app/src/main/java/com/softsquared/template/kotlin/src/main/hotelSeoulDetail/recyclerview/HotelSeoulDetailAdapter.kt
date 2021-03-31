@@ -11,14 +11,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.softsquared.template.kotlin.R
-import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.config.ApplicationClass.Companion.TAG
-import com.softsquared.template.kotlin.src.main.hotelReservCheckBefore.recyclerview.ReservCheckBeforeViewHolder
 import com.softsquared.template.kotlin.src.main.hotelSeoulAcm.HotelSeoulAcmActivity
-import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.HotelSeoulDetailActivity
 import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.model.Review
 import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.model.Room
-import kotlin.math.log
 
 // room adapter
 class AcmRoomAdapter(private val RoomList: List<Room>) : RecyclerView.Adapter<AcmRoomAdapter.CustomViewHolder>() {

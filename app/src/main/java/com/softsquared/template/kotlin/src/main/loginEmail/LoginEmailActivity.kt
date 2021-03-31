@@ -41,17 +41,32 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
         Log.e(TAG, "이메일로 로그인 성공, jwt = ${response.result[0]}")
 
         // SharedPreferences 의 데이터를 저장/편집을 위해 Editor 변수를 선언
-        val editor = ApplicationClass.sSharedPreferences.edit()
+        val editor1 = ApplicationClass.sSharedPreferences.edit()
 
         // key값에 value값을 저장
-        editor.putString(ApplicationClass.X_ACCESS_TOKEN, response.result[0].jwt)
+        editor1.putString(ApplicationClass.X_ACCESS_TOKEN, response.result[0].jwt)
 
         // 메모리에 있는 데이터를 저장장치에 저장함. commit
-        editor.commit()
+        editor1.commit()
 
         if (response.code == 1000) {
             Log.e(TAG, "onPostLoginEmailSuccess: 로그인 성공")
             response.message?.let { showCustomToast(it) }
+
+            //userIdx값 sharedpreference에 저장
+            Log.e(TAG, "이메일로 로그인 성공, userIdx = ${response.result[0].userIdx}")
+
+            // SharedPreferences 의 데이터를 저장/편집을 위해 Editor 변수를 선언
+            val editor2 = ApplicationClass.sSharedPreferences.edit()
+
+            // key값에 value값을 저장
+            editor2.putInt("userIdx", response.result[0].userIdx)
+
+            // 메모리에 있는 데이터를 저장장치에 저장함. commit
+            editor2.commit()
+
+            Log.e(TAG, "userIdx 저장됐는지 확인: ${ApplicationClass.sSharedPreferences.getInt("userIdx", 0)}")
+
             finish()
         }
     }

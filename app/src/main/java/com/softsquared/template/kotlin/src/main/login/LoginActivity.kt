@@ -136,6 +136,19 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
             Log.e(TAG, "onPostLoginSuccess: 로그인 성공")
             response.message?.let { showCustomToast(it) }
 
+            //userIdx값 sharedpreference에 저장
+            Log.e(TAG, "일반 로그인 성공, userIdx = ${response.result[0].userIdx}")
+
+            // SharedPreferences 의 데이터를 저장/편집을 위해 Editor 변수를 선언
+            val editor = ApplicationClass.sSharedPreferences.edit()
+
+            // key값에 value값을 저장
+            editor.putInt("userIdx", response.result[0].userIdx)
+
+            // 메모리에 있는 데이터를 저장장치에 저장함. commit
+            editor.commit()
+
+            Log.e(TAG, "userIdx 저장됐는지 확인: ${sSharedPreferences.getInt("userIdx", 0)}")
             Log.e(TAG, "X_ACCESS_TOKEN 저장됐는지 확인: ${sSharedPreferences.getString(X_ACCESS_TOKEN, "")}")
             finish()
 //            val intent = Intent(this, MyPageFragment::class.java)

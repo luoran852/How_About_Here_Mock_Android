@@ -2,6 +2,7 @@ package com.softsquared.template.kotlin.src.main.required
 
 import android.os.Bundle
 import android.util.Log
+import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityRequiredInfoBinding
 import com.softsquared.template.kotlin.src.main.required.model.PostSignUpRequest
@@ -41,6 +42,20 @@ class RequiredInfoActivity : BaseActivity<ActivityRequiredInfoBinding>
         if (response.code == 1000) {
             Log.e(TAG, "onPostSignUpSuccess: 회원가입 성공")
             response.message?.let { showCustomToast(it) }
+
+            Log.e(TAG, "회원가입 성공, userIdx = ${response.result[0].userIdx}")
+
+            // SharedPreferences 의 데이터를 저장/편집을 위해 Editor 변수를 선언
+            val editor = ApplicationClass.sSharedPreferences.edit()
+
+            // key값에 value값을 저장
+            editor.putInt("userIdx", response.result[0].userIdx)
+
+            // 메모리에 있는 데이터를 저장장치에 저장함. commit
+            editor.commit()
+
+            Log.e(TAG, "userIdx 저장됐는지 확인: ${ApplicationClass.sSharedPreferences.getInt("userIdx", 0)}")
+
             finish()
         }
 

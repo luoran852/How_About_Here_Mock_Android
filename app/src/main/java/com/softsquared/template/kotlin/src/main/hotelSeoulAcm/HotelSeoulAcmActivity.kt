@@ -1,5 +1,6 @@
 package com.softsquared.template.kotlin.src.main.hotelSeoulAcm
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityHotelSeoulAcmBinding
+import com.softsquared.template.kotlin.src.main.hotelReserv.ReservationActivity
 import com.softsquared.template.kotlin.src.main.hotelSeoulAcm.model.AcmResponse
 import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.recyclerview.AcmInfoAdapter
 import com.softsquared.template.kotlin.src.main.hotelSeoulDetail.recyclerview.AcmRefundAdapter
@@ -24,14 +26,23 @@ class HotelSeoulAcmActivity : BaseActivity<ActivityHotelSeoulAcmBinding>
         val checkOut = 20210402
         val roomIdx = intent.getIntExtra("roomIdx", 0)
 
+        Log.e(TAG, "숙소페이지에서 acmIdx = $acmIdx")
+        Log.e(TAG, "숙소페이지에서 roomIdx = $roomIdx")
+
         val editor = ApplicationClass.sSharedPreferences.edit()
-        editor.putInt("acmIdx", acmIdx)
+        editor.putInt("roomIdx", roomIdx)
         editor.apply()
         editor.commit()
         showLoadingDialog(this)
         AcmService(this).tryGetAcm(acmIdx, roomIdx, checkIn, checkOut)
 
-        binding.hotelSeoulSleep.bringToFront()
+//        binding.hotelSeoulSleep.bringToFront()
+
+        //예약버튼 클릭하면 예약 페이지로 이동
+        binding.hotelSeoulRoomReservationBtn.setOnClickListener {
+            val intent = Intent(this, ReservationActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onGetAcmSuccess(response: AcmResponse) {

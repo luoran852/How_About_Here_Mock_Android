@@ -15,6 +15,14 @@
 
     <string name="login_email_pwd_underlined_text"><u>비밀번호 재설정</u></string>
 
+    <string name="reserve_sale_2000_txt"><u>2천원 할인</u></string>
+
+    <string name="reserve_sale_3000_txt"><u>3천원 할인</u></string>
+
+    <string name="reserve_sale_5000_txt"><u>5천원 할인</u></string>
+
+    <string name="reserve_sale_8000_txt"><u>8천원 할인</u></string>
+
     <string name="main_btm_nav_home_title">홈</string>
 
     <string name="main_btm_nav_search_title">검색</string>

@@ -1,2 +1,0 @@
-# how_about_here_mock_android
-Softsquared 12th_project_여기어때_Android
